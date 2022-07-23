@@ -1,19 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PrincipalController;
+use App\Http\Controllers\NovoProdutoController;
+use App\Http\Controllers\NovaCategoriaController;
+use App\Http\Controllers\TodasCategoriasController;
 
-Route::get('/', function () {
-    return view('site.index');
-});
+Route::get('/', [PrincipalController::class, 'index']);
 
-Route::get('/novo_produto', function () {
-    return view('site.novo_produto');
-});
+Route::get('/novo_produto', [NovoProdutoController::class, 'novo_produto']);
 
-Route::get('/todas_categorias', function () {
-    return view('site.todas_categorias');
-});
+Route::get('/todas_categorias', [TodasCategoriasController::class, 'todas_categorias']);
 
-Route::get('/nova_categoria', function () {
-    return view('site.nova_categoria');
-});
+Route::get('/nova_categoria', [NovaCategoriaController::class, 'nova_categoria']);
