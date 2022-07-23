@@ -40,12 +40,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th>01</th>
-                                                <td>Headphone</td>
-                                                <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
-                                                <td><i class="fas fa-edit fa-lg text-info"></i></td>
-                                            </tr>
+                                            <?php
+                                                foreach($categorias as $categoria){
+                                                    echo'
+                                                        <tr>
+                                                            <th>'.$categoria->id.'</th>
+                                                            <td>'.$categoria->nome_categoria.'</td>
+                                                            <td><a class="fas fa-trash-alt fa-lg text-danger" href="/categoria/delete/'.$categoria->id.'"></a></td>
+                                                            <td><a class="fas fa-edit fa-lg text-info"  href="/categoria/update/'.$categoria->id.'"></a></td>
+                                                        </tr>
+                                                    ';
+                                                }     
+                                            ?>
                                         </tbody>	
                                     </table>
                                 </div>

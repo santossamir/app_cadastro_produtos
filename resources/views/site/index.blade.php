@@ -42,14 +42,20 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <th>01</th>
-                                                <td>Headset JBL</td>
-                                                <td>R$ 350,00</td>
-                                                <td>Headphone</td>
-                                                <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
-                                                <td><i class="fas fa-edit fa-lg text-info"></i></td>
-                                            </tr>
+                                            <?php
+                                                foreach($produtos as $produto){
+                                                    echo'
+                                                        <tr>
+                                                            <th>'.$produto->id.'</th>
+                                                            <td>'.$produto->nome_produto.'</td>
+                                                            <td>'.$produto->preco_produto.'</td>
+                                                            <td>'.$produto->categoria_id.'</td>
+                                                            <td><a class="fas fa-trash-alt fa-lg text-danger" href="/produto/delete/'.$produto->id.'"></a></td>
+                                                            <td><a class="fas fa-edit fa-lg text-info"  href="/produto/update/'.$produto->id.'"></a></td>
+                                                        </tr>
+                                                    ';
+                                                }     
+                                            ?>
                                         </tbody>	
                                     </table>
                                 </div>

@@ -7,9 +7,13 @@ use App\Http\Controllers\NovaCategoriaController;
 use App\Http\Controllers\TodasCategoriasController;
 
 Route::get('/', [PrincipalController::class, 'index']);
+Route::get('/produto/update/{id}', [PrincipalController::class, 'update']);
+Route::get('/produto/delete/{id}', [PrincipalController::class, 'delete']);
 
 Route::get('/novo_produto', [NovoProdutoController::class, 'novo_produto']);
 
 Route::get('/todas_categorias', [TodasCategoriasController::class, 'todas_categorias']);
+Route::get('/categoria/update/{id}', [TodasCategoriasController::class, 'update']);
+Route::get('/categoria/delete/{id}', [TodasCategoriasController::class, 'delete']);
 
 Route::get('/nova_categoria', [NovaCategoriaController::class, 'nova_categoria']);
