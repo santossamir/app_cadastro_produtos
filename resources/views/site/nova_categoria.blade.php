@@ -13,39 +13,15 @@
         <nav>
             @include('site._components.topo')
         </nav>
-        <script>
-			let writingPattern = /[^0-9]/;
 
-			function currencyFormat(moeda){
-				if(writingPattern.test(moeda.key)){
-					moeda.preventDefault();
-					return;
-				}
-				
-				if(!moeda.target.value) return;
-
-				valor = moeda.target.value.toString();
-				valor = valor.replace(/[\D]+/g, '');
-				valor = valor.replace(/([0-9]{1})$/g, ",$1");
-
-				if(valor.length >= 6){
-					while(/([0-9]{4})[,|\.]/g.test(valor)){
-						valor = valor.replace(/([0-9]{1})$/g, ",$1");
-						valor = valor.replace(/([0-9]{3})[,|\.]/g, ".$1");
-					}
-				}
-
-				moeda.target.value = valor;
-			}
-		</script>
         <div class="container app">
             <div class="row">
                 <div class="col-sm-3 menu">
                     <ul class="list-group">
                         <li class="list-group-item"><a href="/">Todos os produtos</a></li>
-                        <li class="list-group-item active"><a href="/novo_produto">Novo produto</a></li>
+                        <li class="list-group-item"><a href="/novo_produto">Novo produto</a></li>
                         <li class="list-group-item"><a href="/todas_categorias">Todas as categorias</a></li>
-                        <li class="list-group-item"><a href="/nova_categoria">Nova categoria</a></li>
+                        <li class="list-group-item active"><a href="/nova_categoria">Nova categoria</a></li>
                     </ul>
                 </div>
 
@@ -53,14 +29,12 @@
                     <div class="container pagina">
                         <div class="row">
                             <div class="col">
-                                <h3 class="text-primary">Novo produto</h3>
+                                <h3 class="text-primary">Nova categoria</h3>
                                 <hr />
                                 <form method="post" action="produto_controller.php?acao=inserir">
 									<div class="form-group">
-										<label class="text-secondary">Dados do produto:</label>
-										<input type="text" class="form-control" placeholder="Nome do produto" required>
-                                        <input type="text" class="form-control" placeholder="Preço" onkeypress="currencyFormat(event)" required>
-                                        <input type="text" class="form-control" placeholder="Id da categoria" required>
+										<label class="text-secondary">Dados da categoria:</label>
+										<input type="text" class="form-control" placeholder="Nome da categoria" required>
 									</div>
 									<button class="btn btn-primary">Cadastrar</button>
 								</form>

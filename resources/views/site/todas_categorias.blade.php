@@ -17,9 +17,9 @@
                 <div class="row">
                     <div class="col-sm-3 menu">
                         <ul class="list-group">
-                            <li class="list-group-item active"><a href="/">Todos os produtos</a></li>
+                            <li class="list-group-item"><a href="/">Todos os produtos</a></li>
                             <li class="list-group-item"><a href="/novo_produto">Novo produto</a></li>
-                            <li class="list-group-item"><a href="/todas_categorias">Todas as categorias</a></li>
+                            <li class="list-group-item active"><a href="/todas_categorias">Todas as categorias</a></li>
                             <li class="list-group-item"><a href="/nova_categoria">Nova categoria</a></li>
                         </ul>
                     </div>
@@ -28,15 +28,13 @@
                         <div class="container pagina">
                             <div class="row">
                                 <div class="col">
-                                    <h3 class="text-primary">Todos os produtos</h3>
+                                    <h3 class="text-primary">Todas as categorias</h3>
                                     <hr />
                                     <table class="table table-borderless">
                                         <thead class="text-secondary">
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Nome</th>
-                                                <th>Preço</th>
-                                                <th>Categoria</th>
                                                 <th>Excluir</th>
                                                 <th>Editar</th>
                                             </tr>
@@ -44,8 +42,6 @@
                                         <tbody>
                                             <tr>
                                                 <th>01</th>
-                                                <td>Headset JBL</td>
-                                                <td>R$ 350,00</td>
                                                 <td>Headphone</td>
                                                 <td><i class="fas fa-trash-alt fa-lg text-danger"></i></td>
                                                 <td><i class="fas fa-edit fa-lg text-info"></i></td>

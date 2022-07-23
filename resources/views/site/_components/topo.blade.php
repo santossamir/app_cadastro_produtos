@@ -7,9 +7,9 @@
     <body>
         <nav class="navbar navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="/index">
+                <a class="navbar-brand" href="/">
                     <img src="{{asset('img/carrinho-de-compras.png')}}" class="d-inline-block align-top" alt="">
-                    <span>App Cadastro de Produtos</span>
+                    <span>Cadastro de Produtos</span>
                 </a>
             </div>
         </nav>
