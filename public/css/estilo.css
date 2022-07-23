@@ -1,0 +1,53 @@
+.menu {
+	margin-bottom: 25px;
+}
+
+.app {
+	margin-top: 25px;
+}
+
+.pagina {
+	border:solid 1px #DFDFDF;
+	padding:25px !important;
+}
+
+li a {
+	color: #495057;
+}
+
+li a:hover {
+	text-decoration: none;
+}
+
+.form-group input{
+	margin-bottom: 10px;;
+}
+
+.table {
+	text-align: center;
+}
+
+.table tbody{
+	color: #495057;
+}
+
+.navbar-brand img{
+	position: relative;
+    bottom: 2px;
+	width: 30px;
+	height: 30px;
+}
+
+li.list-group-item.active {
+	background-color: #fff;
+	border-color: #0d6efd;
+    border-left:solid 10px #0d6efd;
+}
+
+span{
+    margin-left: 5px;	
+    background: -webkit-linear-gradient(#0d6efd, #2f5fa8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+  }
