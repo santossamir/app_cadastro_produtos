@@ -1,1 +1,0 @@
-<h1>I'm categoria delete!</h1>
