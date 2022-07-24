@@ -20,4 +20,14 @@ class NovaCategoriaController extends Controller
 
         return redirect('/todas_categorias');
     }
+
+    public function update(Request $request, $id){
+
+        $categoria = Categorias::find($id);
+        $categoria->nome_categoria = $request->input('nome_categoria', $categoria->nome_categoria);
+        $categoria->save();
+
+        return redirect('/todas_categorias');
+
+    }
 }

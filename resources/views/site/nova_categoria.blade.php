@@ -29,13 +29,19 @@
                     <div class="container pagina">
                         <div class="row">
                             <div class="col">
-                                <h3 class="text-primary">Nova categoria</h3>
+                                <h3 class="text-primary">
+                                    @if(empty($categoria))
+                                        Nova categoria
+                                    @else
+                                        Alterar categoria
+                                    @endif
+                                </h3>
                                 <hr />
-                                <form method="post" action="/categorias/store">
+                                <form method="post" action="{{empty($categoria) ? '/categorias/store' : '/categorias/update/'.$categoria->id}}">
                                     @csrf
 									<div class="form-group">
 										<label class="text-secondary">Dados da categoria:</label>
-										<input type="text" name="nome_categoria" class="form-control" placeholder="Nome da categoria" required>
+										<input type="text" name="nome_categoria" value="{{empty($categoria) ? '': $categoria->nome_categoria}}" class="form-control" placeholder="Nome da categoria" required>
 									</div>
 									<input type="submit" class="btn btn-primary" value="Cadastrar">
 								</form>

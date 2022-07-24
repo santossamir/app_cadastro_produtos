@@ -53,15 +53,21 @@
                     <div class="container pagina">
                         <div class="row">
                             <div class="col">
-                                <h3 class="text-primary">Novo produto</h3>
+                                <h3 class="text-primary">
+                                    @if(empty($produto))
+                                        Novo produto
+                                    @else
+                                        Alterar produto
+                                    @endif
+                                </h3>
                                 <hr />
-                                <form method="post" action="/produtos/store">
+                                <form method="post" action="{{empty($produto) ? '/produtos/store' : '/produtos/update/'.$produto->id}}">
                                    @csrf
 									<div class="form-group">
 										<label class="text-secondary">Dados do produto:</label>
-										<input type="text" name="nome_produto" class="form-control" placeholder="Nome do produto" required>
-                                        <input type="text" name="preco_produto" class="form-control" placeholder="Preço" onkeypress="currencyFormat(event)" required>
-                                        <input type="text" name="categoria_id" class="form-control" placeholder="Id da categoria" required>
+										<input type="text" name="nome_produto" value="{{empty($produto)? '' : $produto->nome_produto}}" class="form-control" placeholder="Nome do produto" required>
+                                        <input type="text" name="preco_produto" value="{{empty($produto)? '' : $produto->preco_produto}}" class="form-control" placeholder="Preço" onkeypress="currencyFormat(event)" required>
+                                        <input type="text" name="categoria_id" value="{{empty($produto)? '' : $produto->categoria_id}}" class="form-control" placeholder="Id da categoria" required>
 									</div>
 									<input type="submit" class="btn btn-primary" value="Cadastrar">
 								</form>

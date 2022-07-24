@@ -12,10 +12,10 @@ class TodasCategoriasController extends Controller
         return view('site.todas_categorias', ['categorias' => $categorias]);
     }
 
-    public function update($id)
+    public function edit($id)
     {
         $categoria = Categorias::find($id);
-        return view('site._update.update_categoria', ['categoria'=> $categoria]);
+        return view('site.nova_categoria', ['categoria'=> $categoria]);
     }
 
     public function delete($id)

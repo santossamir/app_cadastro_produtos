@@ -21,4 +21,17 @@ class NovoProdutoController extends Controller
 
         return redirect('/');
     }
+
+    public function update(Request $request, $id){
+
+        $produto = Produtos::find($id);
+        $produto->nome_produto = $request->input('nome_produto', $produto->nome_produto);
+        $produto->preco_produto = $request->input('preco_produto', $produto->preco_produto);
+        $produto->categoria_id = $request->input('categoria_id', $produto->categoria_id);
+        $produto->save();
+
+        return redirect('/');
+
+    }
+
 }

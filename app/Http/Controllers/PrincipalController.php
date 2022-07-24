@@ -12,11 +12,17 @@ class PrincipalController extends Controller
         return view('site.index', ['produtos' => $produtos]);
     }
 
-    public function update($id)
+    public function edit($id)
+    {
+        $produto = Produtos::find($id);
+        return view('site.novo_produto', ['produto'=> $produto]);
+    }
+
+    /*public function update($id)
     {
         $produto = Produtos::find($id);
         return view('site._update.update_produto', ['produto'=> $produto]);
-    }
+    }*/
 
     public function delete($id)
     {
