@@ -23,6 +23,6 @@ class TodasCategoriasController extends Controller
         $categoria = Categorias::find($id);
         $categoria->forceDelete();
        
-        return view('site.todas_categorias');
+        return redirect('/todas_categorias');
     }
 }

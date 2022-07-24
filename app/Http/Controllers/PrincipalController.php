@@ -26,7 +26,7 @@ class PrincipalController extends Controller
         $produto = Produtos::find($id);
         $produto->forceDelete();
 
-        return view('site.index');
+        return redirect('/');
     }
 
 }
