@@ -49,8 +49,8 @@
                                                             <th>'.$produto->id.'</th>
                                                             <td>'.$produto->nome_produto.'</td>
                                                             <td> R$ '.$produto->preco_produto.'</td>
-                                                            <td>'.$produto->categoria_id.'</td>
-                                                            <td><a class="fas fa-trash-alt fa-lg text-danger" href="/produto/delete/'.$produto->id.'"></a></td>
+                                                            <td>'.$produto->nome_categoria.'</td>
+                                                            <td><a class="fas fa-trash-alt fa-lg text-danger" href="/produtos/delete/'.$produto->id.'"></a></td>
                                                             <td><a class="fas fa-edit fa-lg text-info"  href="/produtos/edit/'.$produto->id.'"></a></td>
                                                         </tr>
                                                     ';

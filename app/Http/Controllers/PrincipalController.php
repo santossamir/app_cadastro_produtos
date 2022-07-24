@@ -8,7 +8,10 @@ use App\Models\Produtos;
 class PrincipalController extends Controller
 {
     public function index(){
-        $produtos = DB::select('SELECT * FROM produtos;');
+        $produtos = DB::table('produtos')
+        ->leftjoin('categorias','categoria_id', '=', 'categorias.id', '=', 'categorias.nome_categoria')
+        ->select('produtos.id', 'produtos.nome_produto', 'produtos.preco_produto', 'categorias.nome_categoria')
+        ->get();
         return view('site.index', ['produtos' => $produtos]);
     }
 
@@ -18,16 +21,12 @@ class PrincipalController extends Controller
         return view('site.novo_produto', ['produto'=> $produto]);
     }
 
-    /*public function update($id)
+    public function destroy($id)
     {
         $produto = Produtos::find($id);
-        return view('site._update.update_produto', ['produto'=> $produto]);
-    }*/
+        $produto->forceDelete();
 
-    public function delete($id)
-    {
-        $produto = Produtos::find($id);
-        return view('site._delete.delete_produto', ['produto'=> $produto]);
+        return view('site.index');
     }
 
 }

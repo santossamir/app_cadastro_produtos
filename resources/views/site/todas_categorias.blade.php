@@ -46,7 +46,7 @@
                                                         <tr>
                                                             <th>'.$categoria->id.'</th>
                                                             <td>'.$categoria->nome_categoria.'</td>
-                                                            <td><a class="fas fa-trash-alt fa-lg text-danger" href="/categoria/delete/'.$categoria->id.'"></a></td>
+                                                            <td><a class="fas fa-trash-alt fa-lg text-danger" href="/categorias/delete/'.$categoria->id.'"></a></td>
                                                             <td><a class="fas fa-edit fa-lg text-info"  href="/categorias/edit/'.$categoria->id.'"></a></td>
                                                         </tr>
                                                     ';

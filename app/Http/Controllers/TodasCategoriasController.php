@@ -18,9 +18,11 @@ class TodasCategoriasController extends Controller
         return view('site.nova_categoria', ['categoria'=> $categoria]);
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
         $categoria = Categorias::find($id);
-        return view('site._delete.delete_categoria', ['categoria'=> $categoria]);
+        $categoria->forceDelete();
+       
+        return view('site.todas_categorias');
     }
 }
