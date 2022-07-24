@@ -31,12 +31,13 @@
                             <div class="col">
                                 <h3 class="text-primary">Nova categoria</h3>
                                 <hr />
-                                <form method="post" action="produto_controller.php?acao=inserir">
+                                <form method="post" action="/categorias/store">
+                                    @csrf
 									<div class="form-group">
 										<label class="text-secondary">Dados da categoria:</label>
-										<input type="text" class="form-control" placeholder="Nome da categoria" required>
+										<input type="text" name="nome_categoria" class="form-control" placeholder="Nome da categoria" required>
 									</div>
-									<button class="btn btn-primary">Cadastrar</button>
+									<input type="submit" class="btn btn-primary" value="Cadastrar">
 								</form>
                             </div>
                         </div>

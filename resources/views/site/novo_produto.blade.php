@@ -55,14 +55,15 @@
                             <div class="col">
                                 <h3 class="text-primary">Novo produto</h3>
                                 <hr />
-                                <form method="post" action="produto_controller.php?acao=inserir">
+                                <form method="post" action="/produtos/store">
+                                   @csrf
 									<div class="form-group">
 										<label class="text-secondary">Dados do produto:</label>
-										<input type="text" class="form-control" placeholder="Nome do produto" required>
-                                        <input type="text" class="form-control" placeholder="Preço" onkeypress="currencyFormat(event)" required>
-                                        <input type="text" class="form-control" placeholder="Id da categoria" required>
+										<input type="text" name="nome_produto" class="form-control" placeholder="Nome do produto" required>
+                                        <input type="text" name="preco_produto" class="form-control" placeholder="Preço" onkeypress="currencyFormat(event)" required>
+                                        <input type="text" name="categoria_id" class="form-control" placeholder="Id da categoria" required>
 									</div>
-									<button class="btn btn-primary">Cadastrar</button>
+									<input type="submit" class="btn btn-primary" value="Cadastrar">
 								</form>
                             </div>
                         </div>
