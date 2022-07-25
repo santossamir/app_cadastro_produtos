@@ -41,8 +41,9 @@
                                     @csrf
 									<div class="form-group">
 										<label class="text-secondary">Dados da categoria:</label>
-										<input type="text" name="nome_categoria" value="{{empty($categoria) ? '': $categoria->nome_categoria}}" class="form-control" placeholder="Nome da categoria" required>
-									</div>
+										<input type="text" name="nome_categoria" value="{{empty($categoria) ? '': $categoria->nome_categoria}}" class="form-control" placeholder="Nome da categoria">
+                                        {{$errors->has('nome_categoria') ? $errors->first('nome_categoria') : ''}}
+                                    </div>
 									<input type="submit" class="btn btn-primary" value="Cadastrar">
 								</form>
                             </div>

@@ -16,6 +16,20 @@ class NovoProdutoController extends Controller
 
     public function store(Request $request){
         
+        $regra = [
+            'nome_produto' => 'required|min:3',
+            'preco_produto' => 'required|numeric|min:3',
+            'categoria_id' => 'required|numeric'
+        ];
+        
+        $feedback = [
+            'required' => 'Este campo é obrigatório!',
+            'nome_produto.min' => 'O campo precisa ter no mínimo 3 caracteres',
+            'numeric' => 'Preencha o campo apenas com números.'
+        ];
+
+        $request->validate($regra, $feedback);
+
         $data_form = $request->all();
  
         $novo_produto = new Produtos;
