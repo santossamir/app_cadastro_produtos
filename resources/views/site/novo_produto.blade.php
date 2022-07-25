@@ -68,7 +68,7 @@
 										<input type="text" name="nome_produto" value="{{empty($produto)? '' : $produto->nome_produto}}" class="form-control" placeholder="Nome do produto" required>
                                         <input type="text" name="preco_produto" value="{{empty($produto)? '' : $produto->preco_produto}}" class="form-control" placeholder="Preço" onkeypress="currencyFormat(event)" required>
                                         <input type="text" name="categoria_id" value="{{empty($produto)? '' : $produto->categoria_id}}" class="form-control" placeholder="Id da categoria" required>
-									</div>
+                                    </div>
 									<input type="submit" class="btn btn-primary" value="Cadastrar">
 								</form>
                             </div>

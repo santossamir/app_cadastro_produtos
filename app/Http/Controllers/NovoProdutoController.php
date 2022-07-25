@@ -1,23 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Categorias;
 use App\Models\Produtos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NovoProdutoController extends Controller
 {
     public function novo_produto(){
-        return view('site.novo_produto');
+        $categorias = Categorias::all();
+        return view('site.novo_produto', compact('categorias', $categorias));
     }
 
     public function store(Request $request){
+        
         $data_form = $request->all();
-       
-        $novoProduto = new Produtos;
-        $novoProduto->nome_produto = $data_form['nome_produto'];
-        $novoProduto->preco_produto = $data_form['preco_produto'];
-        $novoProduto->categoria_id = $data_form['categoria_id'];
-        $novoProduto->save();
+ 
+        $novo_produto = new Produtos;
+        $novo_produto->nome_produto = $data_form['nome_produto'];
+        $novo_produto->preco_produto = $data_form['preco_produto'];
+        $novo_produto->categoria_id = $data_form['categoria_id'];
+        $novo_produto->save();
 
         return redirect('/');
     }

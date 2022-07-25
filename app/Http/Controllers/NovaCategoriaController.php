@@ -12,6 +12,7 @@ class NovaCategoriaController extends Controller
     }
 
     public function store(Request $request){
+        
         $data_form = $request->all();
        
         $novaCategoria = new Categorias;

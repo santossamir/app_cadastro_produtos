@@ -6,7 +6,7 @@ use App\Http\Controllers\NovoProdutoController;
 use App\Http\Controllers\NovaCategoriaController;
 use App\Http\Controllers\TodasCategoriasController;
 
-Route::get('/', [PrincipalController::class, 'index']);
+Route::get('/', [PrincipalController::class, 'home']);
 Route::get('/produtos/edit/{id}', [PrincipalController::class, 'edit']);
 Route::get('/produtos/delete/{id}', [PrincipalController::class, 'destroy']);
 
