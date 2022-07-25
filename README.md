@@ -7,7 +7,7 @@ Para cadastrar um produto, é necessário cadastrar antes uma categoria, visto q
 há uma relação entre as tabelas. Também foi desenvolvido uma barra de navegação
 entre os CRUDs, para dinamizar o projeto.
 
-Veja alguns prints da aplicação:
+Veja os prints da aplicação:
 
 ![Captura de tela de 2022-07-25 00-33-31](https://user-images.githubusercontent.com/88064533/180694053-87f7e16a-1658-4c2b-9aaa-385dc6c7c92a.png)
 
