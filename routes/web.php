@@ -10,7 +10,7 @@ Route::get('/', [PrincipalController::class, 'home']);
 Route::get('/produtos/edit/{id}', [PrincipalController::class, 'edit']);
 Route::get('/produtos/delete/{id}', [PrincipalController::class, 'destroy']);
 
-Route::get('/novo_produto', [NovoProdutoController::class, 'novo_produto']);
+Route::get('/novo_produto', [NovoProdutoController::class, 'novo_produto'])->name('site.novo_produto');
 Route::post('/produtos/store', [NovoProdutoController::class, 'store']);
 Route::post('/produtos/update/{id}', [NovoProdutoController::class, 'update']);
 

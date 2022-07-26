@@ -9,16 +9,23 @@ use Illuminate\Support\Facades\DB;
 
 class NovoProdutoController extends Controller
 {
-    public function novo_produto(){
-        $categorias = Categorias::all();
-        return view('site.novo_produto', compact('categorias', $categorias));
+    public function novo_produto(Request $request){
+
+        //Erro no campo categoria_id se a categoria não estiver cadastrada.
+        $erro = '';
+         if($request->get('erro') == 1){
+            $erro = 'Categoria ainda não cadastrada.';
+         };
+
+        return view('site.novo_produto', ['erro' => $erro]);
     }
 
     public function store(Request $request){
         
+        //Regras de validação no form de cadastro.
         $regra = [
             'nome_produto' => 'required|min:3',
-            'preco_produto' => 'required|numeric|min:3',
+            'preco_produto' => 'required|min:3',
             'categoria_id' => 'required|numeric'
         ];
         
@@ -30,6 +37,20 @@ class NovoProdutoController extends Controller
 
         $request->validate($regra, $feedback);
 
+        //Passando pelo validate, agora avalia se a categoria está cadastrada
+        $id_categoria = $request->get('categoria_id');
+
+        $categoria = new Categorias();
+
+        $existe_categoria = $categoria->where('id', $id_categoria)->get()->first();
+
+        if(isset($existe_categoria->nome_categoria)){
+            echo "Categoria existe";
+        }else{
+            return redirect()->route('site.novo_produto', ['erro' => 1]);
+        }
+
+        //Salvando dados no banco
         $data_form = $request->all();
  
         $novo_produto = new Produtos;
@@ -37,7 +58,7 @@ class NovoProdutoController extends Controller
         $novo_produto->preco_produto = $data_form['preco_produto'];
         $novo_produto->categoria_id = $data_form['categoria_id'];
         $novo_produto->save();
-
+        
         return redirect('/');
     }
 

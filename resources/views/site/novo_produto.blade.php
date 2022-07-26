@@ -61,18 +61,25 @@
                                     @endif
                                 </h3>
                                 <hr />
-                                <form method="post" action="{{empty($produto) ? '/produtos/store' : '/produtos/update/'.$produto->id}}">
+                                <form method="post" action="{{empty($produto) ? '/produtos/store/' : '/produtos/update/'.$produto->id}}">
                                    @csrf
 									<div class="form-group">
 										<label class="text-secondary">Dados do produto:</label>
-										<input type="text" name="nome_produto" value="{{empty($produto)? '' : $produto->nome_produto}}" class="form-control" placeholder="Nome do produto">
+										
+                                        <input type="text" name="nome_produto" value="{{empty($produto)? '' : $produto->nome_produto}}" class="form-control" placeholder="Nome do produto">
                                         {{$errors->has('nome_produto') ? $errors->first('nome_produto') : ''}}
+                                        
                                         <input type="text" name="preco_produto" value="{{empty($produto)? '' : $produto->preco_produto}}" class="form-control" placeholder="Preço" onkeypress="currencyFormat(event)">
                                         {{$errors->has('preco_produto') ? $errors->first('preco_produto') : ''}}
+                                        
                                         <input type="text" name="categoria_id" value="{{empty($produto)? '' : $produto->categoria_id}}" class="form-control" placeholder="Id da categoria">
                                         {{$errors->has('categoria_id') ? $errors->first('categoria_id') : ''}}
+                                        
+                                        {{isset($erro) && $erro != '' ? $erro : ''}}
                                     </div>
+
 									<input type="submit" class="btn btn-primary" value="Cadastrar">
+
 								</form>
                             </div>
                         </div>
